@@ -1,0 +1,91 @@
+REVISION NUMBER is 2283
+IP 192.168.51.13 [Distro CENTOS, Version 5.7, Arch 64] was built from BZR with Eucalyptus-CLC00
+IP 192.168.63.1 [Distro CENTOS, Version 5.7, Arch 64] was built from BZR with Eucalyptus-WS00
+IP 192.168.51.59 [Distro CENTOS, Version 5.7, Arch 64] was built from BZR with Eucalyptus-CC00
+IP 192.168.51.70 [Distro CENTOS, Version 5.7, Arch 64] was built from BZR with Eucalyptus-SC00
+IP 192.168.63.4 [Distro CENTOS, Version 5.7, Arch 64] was built from BZR with Eucalyptus-WS00
+IP 192.168.51.72 [Distro CENTOS, Version 5.7, Arch 64] was built from BZR with Eucalyptus-CC00
+IP 192.168.51.181 [Distro CENTOS, Version 5.7, Arch 64] was built from BZR with Eucalyptus-SC00
+IP 192.168.51.182 [Distro CENTOS, Version 5.7, Arch 64] was built from BZR with Eucalyptus-NC00
+
+
+----------------------- Restart CC00 -----------------------
+
+Restarting CC Group 00
+
+192.168.51.59 :: /opt/eucalyptus/etc/init.d/eucalyptus-cc restart
+ssh -o StrictHostKeyChecking=no root@192.168.51.59 "/opt/eucalyptus/etc/init.d/eucalyptus-cc restart"
+Restarting Eucalyptus cluster controller: done.
+
+Restarted CC 192.168.51.59 successfully !
+
+192.168.51.72 :: /opt/eucalyptus/etc/init.d/eucalyptus-cc restart
+ssh -o StrictHostKeyChecking=no root@192.168.51.72 "/opt/eucalyptus/etc/init.d/eucalyptus-cc restart"
+Restarting Eucalyptus cluster controller: done.
+
+Restarted CC 192.168.51.72 successfully !
+
+
+----------------------- Restart NC00 -----------------------
+
+Restarting NC Group 00
+
+192.168.51.182 :: /opt/eucalyptus/etc/init.d/eucalyptus-nc restart
+ssh -o StrictHostKeyChecking=no root@192.168.51.182 "/opt/eucalyptus/etc/init.d/eucalyptus-nc restart"
+Restarting Eucalyptus services: done.
+
+Restarted NC 192.168.51.182 successfully !
+
+
+----------------------- Enabling Cloud Components -----------------------
+
+
+----------------------- Restart Cloud 192.168.51.13 [ CLC00 ] -----------------------
+
+192.168.51.13 :: /opt/eucalyptus/etc/init.d/eucalyptus-cloud restart
+ssh -o StrictHostKeyChecking=no root@192.168.51.13 "/opt/eucalyptus/etc/init.d/eucalyptus-cloud restart"
+Stopping Eucalyptus services: done.
+Starting Eucalyptus services: [debug:0368] redirecting stdout to /opt/eucalyptus/var/log/eucalyptus/startup.log and stderr to /opt/eucalyptus/var/log/eucalyptus/startup.log
+done.
+Restarted CLOUD Components 192.168.51.13 successfully !
+
+
+----------------------- Restart Cloud 192.168.63.1 [ WS00 ] -----------------------
+
+192.168.63.1 :: /opt/eucalyptus/etc/init.d/eucalyptus-cloud restart
+ssh -o StrictHostKeyChecking=no root@192.168.63.1 "/opt/eucalyptus/etc/init.d/eucalyptus-cloud restart"
+Warning: you should check EUCALYPTUS in conf file
+ * Stopping Eucalyptus services 
+   ...done.
+ * Starting Eucalyptus services 
+[debug:0368] redirecting stdout to /opt/eucalyptus/var/log/eucalyptus/startup.log and stderr to /opt/eucalyptus/var/log/eucalyptus/startup.log
+   ...done.
+Restarted CLOUD Components 192.168.63.1 successfully !
+
+
+----------------------- Restart Cloud 192.168.51.70 [ SC00 ] -----------------------
+
+192.168.51.70 :: /opt/eucalyptus/etc/init.d/eucalyptus-cloud restart
+ssh -o StrictHostKeyChecking=no root@192.168.51.70 "/opt/eucalyptus/etc/init.d/eucalyptus-cloud restart"
+Stopping Eucalyptus services: done.
+Starting Eucalyptus services: [debug:0368] redirecting stdout to /opt/eucalyptus/var/log/eucalyptus/startup.log and stderr to /opt/eucalyptus/var/log/eucalyptus/startup.log
+done.
+Restarted CLOUD Components 192.168.51.70 successfully !
+
+
+----------------------- Restart Cloud 192.168.63.4 [ WS00 ] -----------------------
+
+192.168.63.4 :: /opt/eucalyptus/etc/init.d/eucalyptus-cloud restart
+ssh -o StrictHostKeyChecking=no root@192.168.63.4 "/opt/eucalyptus/etc/init.d/eucalyptus-cloud restart"
+root      6043  0.0  0.0   8572   804 pts/1    S+   16:40   0:00 tail -f /opt/eee-root/var/log/eucalyptus/cloud-output.log
+root     15873  0.0  0.0  16712   296 ?        Ss   16:38   0:00 eucalyptus-cloud --java-home=/usr/lib/jvm/java-6-openjdk --debug -Debs.storage.manager=SANManager -Debs.san.provider=NetappProvider -Dwalrus.storage.manager=DRBDStorageManager --remote-dns -h /opt/eee-root -u eucalyptus --pidfile /opt/eee-root/var/run/eucalyptus/eucalyptus-cloud.pid -f -L console-log -o /opt/eee-root/var/log/eucalyptus/startup.log -e /opt/eee-root/var/log/eucalyptus/startup.log
+1000     15874 36.7  5.7 2099032 466824 ?      Sl   16:38   1:11 eucalyptus-cloud --java-home=/usr/lib/jvm/java-6-openjdk --debug -Debs.storage.manager=SANManager -Debs.san.provider=NetappProvider -Dwalrus.storage.manager=DRBDStorageManager --remote-dns -h /opt/eee-root -u eucalyptus --pidfile /opt/eee-root/var/run/eucalyptus/eucalyptus-cloud.pid -f -L console-log -o /opt/eee-root/var/log/eucalyptus/startup.log -e /opt/eee-root/var/log/eucalyptus/startup.log
+root     17337  0.0  0.0  11596  1436 ?        Ss   16:41   0:00 bash -c ps aux | grep euca | grep cloud
+
+Restarted CLOUD Components 192.168.63.4 successfully !
+
+
+----------------------- Restart Cloud 192.168.51.181 [ SC00 ] -----------------------
+
+192.168.51.181 :: /opt/eucalyptus/etc/init.d/eucalyptus-cloud restart
+ssh -o StrictHostKeyChecking=no root@192.168.51.181 "/opt/eucalyptus/etc/init.d/eucalyptus-cloud restart"
